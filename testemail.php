@@ -43,11 +43,12 @@ function sendMail($usr, $passwd, $from, $to, $subject, $body) {
 	}
 }
 
+$cf = json_decode(file_get_contents('scratch/config.json'));
 sendMail(
-	'from@example.com',
-	'password_str', 
-	'<from@example.com>',
-	'<to@example.com>',
-	'Testing...',
-	"SORC LAB TESTING:\n\nEMAIL TESTING"
+    $cf->user,
+    $cf->password,
+    $cf->from,
+    $cf->to,
+    "Testing...",
+    "This is a test email from sorcmon!"
 );

@@ -1,0 +1,22 @@
+SORCMON:
+
+FIRST ITERATION:
+	Temp Mon:
+		- cronjob -> get sensors every 5mins via php script for parsing
+		- get cores and temps, write to tmp if temp has changed
+		
+		End of day log:
+			- loop through temperatures and get daily high, low, and average
+				- output to daily temp log file
+
+	Logwatch:
+		- capture logwatch at end of day and output to email
+
+	End of day log:
+		- gather templog and logwatch + dropbox status
+		- email as <pre> data to macfisher01@gmail.com
+
+
+CONFIG:
+	- All emails and text #s stored in .gitignored json file
+	- sorclab@gmail.com password stored as string in password file, also .gitignore(d)

@@ -1,14 +1,5 @@
 <?php
 
-// IMAP must be enabled for gmail account
-// sudo apt-get install sendmail
-// sudo apt-get install php-pear
-// sudo pear install Mail
-// sudo pear install Net_SMTP
-// turned this on: enabled less secure apps for from@gmail.com
-// https://www.google.com/settings/security/lesssecureapps
-// Very slight security issue, but can be fixed later.
-
 // Pear Mail Library
 require_once "Mail.php";
 

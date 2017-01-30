@@ -17,8 +17,10 @@ function sendMail($usr, $passwd, $from, $to, $subject, $body) {
 	);
 
 	$smtp = Mail::factory('smtp', array(
-	        'host' => 'ssl://smtp.gmail.com',
-	        'port' => '465',
+	        //'host' => 'ssl://smtp.gmail.com',
+            'host' => 'smtp.gmail.com'
+	        //'port' => '465',
+            'port' => '587',
 	        'auth' => true,
 	        'username' => $usr,
 	        'password' => $passwd
@@ -34,7 +36,7 @@ function sendMail($usr, $passwd, $from, $to, $subject, $body) {
 	}
 }
 
-$cf = json_decode(file_get_contents('scratch/config.json'));
+$cf = json_decode(file_get_contents('/var/www/public/sorcmon/scratch/config.json'));
 sendMail(
     $cf->user,
     $cf->password,

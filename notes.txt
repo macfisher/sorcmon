@@ -43,3 +43,14 @@ if(!$mail->Send())
 // You may delete or alter these last lines reporting error messages, but beware,
 that if you delete the $mail->Send() part, the e-mail will not be sent, because that
  is the part of this code, that actually sends the e-mail.
+
+/** NEED TO FOLLOW THESE STEPS COMBINED ====================================== */
+https://www.cyberciti.biz/tips/linux-use-gmail-as-a-smarthost.html
+http://tombuntu.com/index.php/2008/10/21/sending-email-from-your-system-with-ssmtp/
+
+Works up until I get auth failed because I need to login to my email
+via CLI--follow these steps:
+http://stackoverflow.com/questions/1516754/connecting-to-smtp-gmail-com-via-command-line
+https://mihail.stoynov.com/2014/10/29/talk-smtp-to-gmail-with-openssl-s_client/
+http://stackoverflow.com/questions/11046135/how-to-send-email-using-simple-smtp-commands-via-gmail
+https://taufanlubis.wordpress.com/2016/02/08/how-to-send-email-via-gmail-server-using-openssl/

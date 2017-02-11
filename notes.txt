@@ -2,55 +2,6 @@
 /** TODO: Create setup.php for config.json config ----------------------------- */
 /** TODO: Auto-detect daemons and add them to monitor ------------------------- */
 
-require_once('scripts/phpmailer/class.phpmailer.php');
 
-$mail = new PHPMailer();
-
-$mail->IsSMTP();                       // telling the class to use SMTP
-
-$mail->SMTPDebug = 0;
-// 0 = no output, 1 = errors and messages, 2 = messages only.
-
-$mail->SMTPAuth = true;                // enable SMTP authentication
-$mail->SMTPSecure = "tls";              // sets the prefix to the servier
-$mail->Host = "smtp.gmail.com";        // sets Gmail as the SMTP server
-$mail->Port = 587;                     // set the SMTP port for the GMAIL
-
-$mail->Username = "info@example.com";  // Gmail username
-$mail->Password = "yourpassword";      // Gmail password
-
-$mail->CharSet = 'windows-1250';
-$mail->SetFrom ('info@example.com', 'Example.com Information');
-$mail->AddBCC ( 'sales@example.com', 'Example.com Sales Dep.');
-$mail->Subject = $subject;
-$mail->ContentType = 'text/plain';
-$mail->IsHTML(false);
-
-$mail->Body = $body_of_your_email;
-// you may also use $mail->Body = file_get_contents('your_mail_template.html');
-
-$mail->AddAddress ('your.recipient@domain.com', 'Recipients Name');
-// you may also use this format $mail->AddAddress ($recipient);
-
-if(!$mail->Send())
-{
-        $error_message = "Mailer Error: " . $mail->ErrorInfo;
-} else
-{
-        $error_message = "Successfully sent!";
-}
-
-// You may delete or alter these last lines reporting error messages, but beware,
-that if you delete the $mail->Send() part, the e-mail will not be sent, because that
- is the part of this code, that actually sends the e-mail.
-
-/** NEED TO FOLLOW THESE STEPS COMBINED ====================================== */
-https://www.cyberciti.biz/tips/linux-use-gmail-as-a-smarthost.html
-http://tombuntu.com/index.php/2008/10/21/sending-email-from-your-system-with-ssmtp/
-
-Works up until I get auth failed because I need to login to my email
-via CLI--follow these steps:
-http://stackoverflow.com/questions/1516754/connecting-to-smtp-gmail-com-via-command-line
-https://mihail.stoynov.com/2014/10/29/talk-smtp-to-gmail-with-openssl-s_client/
-http://stackoverflow.com/questions/11046135/how-to-send-email-using-simple-smtp-commands-via-gmail
-https://taufanlubis.wordpress.com/2016/02/08/how-to-send-email-via-gmail-server-using-openssl/
+https://github.com/PHPMailer/PHPMailer
+https://github.com/PHPMailer/PHPMailer/wiki/Using-Gmail-with-XOAUTH2

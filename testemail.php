@@ -17,9 +17,7 @@ function sendMail($usr, $passwd, $from, $to, $subject, $body) {
 	);
 
 	$smtp = Mail::factory('smtp', array(
-	        //'host' => 'ssl://smtp.gmail.com',
             'host' => 'smtp.gmail.com'
-	        //'port' => '465',
             'port' => '587',
 	        'auth' => true,
 	        'username' => $usr,

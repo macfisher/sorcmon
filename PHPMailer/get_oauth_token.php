@@ -15,7 +15,7 @@
 
 namespace League\OAuth2\Client\Provider;
 
-require 'vendor/autoload.php';
+require 'PHPMailerAutoload.php';
 
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
@@ -25,12 +25,20 @@ use Psr\Http\Message\ResponseInterface;
 session_start();
 
 //If this automatic URL doesn't work, set it yourself manually
-$redirectUri = isset($_SERVER['HTTPS']) ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
+//$redirectUri = isset($_SERVER['HTTPS']) ? 'https://' : 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
 //$redirectUri = 'http://localhost/phpmailer/get_oauth_token.php';
 
 //These details obtained are by setting up app in Google developer console.
-$clientId = 'RANDOMCHARS-----duv1n2.apps.googleusercontent.com';
-$clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
+//$clientId = 'RANDOMCHARS-----duv1n2.apps.googleusercontent.com';
+//$clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
+
+// sorcmon credentials via config.json
+$conf = json_decode(file_get_contents('../scratch/config.json'));
+
+$redirectUri  = $conf->redirect_uri;
+$clientId     = $conf->client_id;
+$clientSecret = $conf->client_secret;
+
 
 class Google extends AbstractProvider
 {

@@ -6,6 +6,12 @@
 https://github.com/PHPMailer/PHPMailer
 https://github.com/PHPMailer/PHPMailer/wiki/Using-Gmail-with-XOAUTH2
 
+/** Require Gmail OAUTH2 as package dependency ================================ */
+composer require league/oauth2-client, if composer.json is empty, but i've added
+to repo.
+
+>> Just run composer install inside PHPMailer dir.
+
 NOTE: Requires PHP 5.5 or later.
 
 /** Configure an OAuth2 app =================================================== */

@@ -5,3 +5,39 @@
 
 https://github.com/PHPMailer/PHPMailer
 https://github.com/PHPMailer/PHPMailer/wiki/Using-Gmail-with-XOAUTH2
+
+NOTE: Requires PHP 5.5 or later.
+
+/** Configure an OAuth2 app =================================================== */
+>> Login to google account for email addr that will be used for SMTP relay.
+>> Go to developer console. (https://console.developers.google.com/apis/library)
+>> Click "Create Project" under the Project pull-down at the top of the page where
+   the "Google APIs" logo is.
+>> Give the Project a name, can be anything, i.e. PHPMailer. Then click Create.
+>> Go to Library and select 'Gmail API' and Enable it.
+>> Select 'Create Credentials'
+>> Google will try to ask questions to figure out what you need, but skip that
+   and select 'client ID'.
+>> Google will ask you to set a product name on the consent screen. Select
+   'Configure consent screen'.
+>> Should auto-fill your Gmail addr. All fields are optional except the Product
+   Name field, which can be set to sorcmon, or whatever. Does not have to be
+   PHPMailer or sorcmon. Click 'Save'.
+>> Go to Dashboard and select Gmail API under your APIs at the bottom of the
+   screen and then select 'Create Credentials'.
+>> Select client ID again. Choose 'Web application' for Application Type.
+>> Name = sorcmon (or whatever). Leave the Authorized JavaScript origins blank.
+>> Add URL for sorcmon to Authorized redirect URIs
+   http://localhost/sorcmon/get_oauth_token.php -> click 'Create'.
+>> Google will show you your generated 'client ID' and 'client secret'.
+
+NOTE: Next step will need to be updated for sorcmon to use scratch/config.json.
+
+>> Copy and paste the credentials into get_auth_token.php
+    $redirectUri = 'http://localhost/phpmailer/get_oauth_token.php';
+    $clientId = '237644427849-g8d0pnkd1jh3idcjdbopvkse2hvj0tdp.apps.googleusercontent.com';
+    $clientSecret = 'mklHhrns6eF-qjwuiLpSB4DL';
+
+/** Fetch the token =========================================================== */
+>> Paste the script URL into a web browser and select Google ID.
+>> 

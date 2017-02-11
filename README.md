@@ -12,6 +12,9 @@
 
 
 *  *  *  *
-DISCLAIMER: sorcmon uses PHPMailer, which uses a different license than the sorcmon monitoring tools.
-            The sorcmon project's 'sorcmon' directory contains PHPMailer code and its associated license.
+DISCLAIMER:
+    sorcmon uses PHPMailer to send the results of its monitoring tools. Please
+    take note and reference the separate licenses associated with each project.
+
+    
 </pre>

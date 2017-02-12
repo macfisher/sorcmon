@@ -11,7 +11,9 @@ Keep this for later reference:
 /** Require Gmail OAUTH2 as package dependency ================================ */
 composer require phpmailer/phpmailer
 composer require league/oauth2-client, if composer.json is empty, but i've added
+composer require league/oauth2-google
 to repo.
+NOTE: Need to delete composer.json and composer.lock before running these commands
 
 >> Just run composer install inside PHPMailer dir.
 
@@ -65,3 +67,17 @@ NOTE: None of the existing cli browsers that I have tested support JS.
       Google is disabling the Submit button so that a browser is needed.
       For this reason, I will have to use Ubuntu on a VM for testing and
       hopefully can port over to Rasbian on an rPi Mail Server.
+
+NOTE: Works with Ubuntu desktop, got refresh token, also used convenient php -S localhost:8000
+
+NOTE: NEED TO REMOVE COMPOSER.JSON AND COMPOSER.LOCK FILES. THESE NEED TO BE GENERATED AT INSTALL
+      THE COMPOSTER INSTALL COMMAND DOES NOT WORK IT SEEMS. NEED TO REQUIRE STUFF WITHOUT ALREADY
+      HAVING THE CONFIGS IN REPO ALREADY.
+
+/** Configure email script ==================================================== */
+>> Basically all that has to be done now is plug in config.json stuff to the
+   examples/gmail_xoauth.phps script and of course re-name it. I had to comment
+   out the require ../PHPMailerAutoload in favor of the vendor/autoload.php.
+   Also, I made sure to change any relative filepaths as needed when I moved
+   the example script into the PHPMailer root directory. I didn't even need to
+   have a webserver running at this point after getting the refresh token.

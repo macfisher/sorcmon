@@ -15,7 +15,7 @@
 
 namespace League\OAuth2\Client\Provider;
 
-require 'PHPMailerAutoload.php';
+require 'vendor/autoload.php';
 
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;

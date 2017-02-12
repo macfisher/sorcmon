@@ -7,6 +7,7 @@ https://github.com/PHPMailer/PHPMailer
 https://github.com/PHPMailer/PHPMailer/wiki/Using-Gmail-with-XOAUTH2
 
 /** Require Gmail OAUTH2 as package dependency ================================ */
+composer require phpmailer/phpmailer
 composer require league/oauth2-client, if composer.json is empty, but i've added
 to repo.
 
@@ -46,4 +47,19 @@ NOTE: Next step will need to be updated for sorcmon to use scratch/config.json.
 
 /** Fetch the token =========================================================== */
 >> Paste the script URL into a web browser and select Google ID.
->> 
+>> Not able to do this since I am running in a terminal!
+>> sudo apt-get install w3m w3m-img (this was already installed on scotch-box)
+>> w3m <url>
+NOTE: w3m does not support JS so this doesn't help me.
+>> sudo apt-get install lynx
+>> sudo apt-get install links
+>> lynx http://localhost/PHPMailer/get_oauth_token.php
+>> stuck at getting a refresh token. cannot get with lynx or w3m!
+
+NOTE: May be able to gain OAUTH creds via an API client tool
+https://developers.google.com/identity/protocols/OAuth2WebServer
+
+NOTE: None of the existing cli browsers that I have tested support JS.
+      Google is disabling the Submit button so that a browser is needed.
+      For this reason, I will have to use Ubuntu on a VM for testing and
+      hopefully can port over to Rasbian on an rPi Mail Server.

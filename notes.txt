@@ -5,6 +5,8 @@
 
 https://github.com/PHPMailer/PHPMailer
 https://github.com/PHPMailer/PHPMailer/wiki/Using-Gmail-with-XOAUTH2
+Keep this for later reference:
+    https://developers.google.com/identity/protocols/OAuth2WebServer
 
 /** Require Gmail OAUTH2 as package dependency ================================ */
 composer require phpmailer/phpmailer

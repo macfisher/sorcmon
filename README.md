@@ -17,7 +17,7 @@ DISCLAIMER:
     take note and reference the separate licenses associated with each project.
 
 
-    /** TODO: Test TLS encryption ------------------------------------------------- */
+    /** TODO: Test TLS encryption (run w/ debug output enabled to see XOAUTH2) ---- */
     /** TODO: Create setup.php for config.json config ----------------------------- */
     /** TODO: Auto-detect daemons and add them to monitor ------------------------- */
 
